@@ -6,8 +6,6 @@ import random
 request_queue = Queue()
 
 # Генеруємо нову заявку з унікальним ідентифікатором
-
-
 def generate_request():
     request_id = int(time.time() * 1000)
     new_request = {"id": request_id, "timestamp": time.time()}
@@ -16,9 +14,7 @@ def generate_request():
     request_queue.put(new_request)
     print(f"Заявка {request_id} додана до черги")
 
- # Виймаємо одну заявку з черги
-
-
+# Виймаємо одну заявку з черги
 def process_request():
     if not request_queue.empty():
         # Виймаємо одну заявку з черги
@@ -32,6 +28,7 @@ def process_request():
 
 
 def main_loop():
+    
     # Для демонстрації обмежимо кількість ітерацій цикла
     for _ in range(5):
 
