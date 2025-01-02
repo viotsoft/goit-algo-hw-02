@@ -14,7 +14,7 @@ def generate_request():
     request_queue.put(new_request)
     print(f"Заявка {request_id} додана до черги")
 
-# Виймаємо одну заявку з черги
+# Беремо одну заявку з черги
 def process_request():
     if not request_queue.empty():
         # Виймаємо одну заявку з черги
@@ -24,7 +24,7 @@ def process_request():
         time.sleep(1)
         print(f"Заявка {current_request['id']} оброблена.")
     else:
-        print("Черга порожня. Немаэ заявок для обробки")
+        print("Черга порожня. Нема заявок для обробки")
 
 
 def main_loop():
